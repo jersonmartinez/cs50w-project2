@@ -1,4 +1,4 @@
-{% if session["username"] %}
+{% if session["username"] == '' %}
     {% extends 'dashboard.html' %} 
 {% else %}
     {% extends 'layout.html' %} 

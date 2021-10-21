@@ -469,9 +469,6 @@ ul.cs-social-list a:hover {
     padding: 3rem !important
 }
 
-body {
-    background-color: #f9f9fa
-}
 
 .card-header:first-child {
     border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0
@@ -505,14 +502,14 @@ h4.card-title {
 .card-header>* {
     margin-left: 8px;
     margin-right: 8px
-}
+} */
 
-.btn-secondary {
+/* .btn-secondary {
     color: #4d5259 !important;
     background-color: #e4e7ea;
     border-color: #e4e7ea;
     color: #fff
-}
+} */
 
 .btn-xs {
     font-size: 11px;
@@ -586,10 +583,10 @@ h4.card-title {
     position: relative;
     padding: 6px 8px;
     margin: 4px 0;
-    background-color: #f5f6f7;
+    background-color: rgba(0,0,0,0.4);
     border-radius: 3px;
     font-weight: 100;
-    color: #9b9b9b
+    color: #9b9b9b;
 }
 
 .media>* {
@@ -746,4 +743,4 @@ h4.card-title {
 
 .text-info {
     color: #48b0f7 !important
-}
+} 

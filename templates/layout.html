@@ -54,103 +54,69 @@
         </div>
     </nav>
     <div class="container my-4 py-4"></div>
+    <div class="container my-1 py-1"></div>
 
-    <main class="container my-4" role="main">
+    <main class="container" role="main">
 
-        <div class="row">
-            <div class="col-md-12 col-lg-12">
-                <div class="card web50-card-dark">
-                    <h5 class="card-header">¿Estás buscando un libro?</h5>
-                    <div class="card-body">
-                        <h5 class="card-title">¡Hola 👋, soy Antonio y déjame guiarte!</h5>
-                        <p class="card-text">
-                            Usualmente, en la búsqueda de libros, se busca por título, autor o temática.
-                        </p>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card card-bordered">
+                    <div class="card-header">
+                        <h4 class="card-title"><strong>Canales</strong></h4>
+                    </div>
+                    <div>
+                        <p style="padding: 10px; background-color: rgba(0,0,0,.6); color: #fff;">Canal 1</p>
+                        <p style="padding: 10px; background-color: rgba(0,0,0,.6); color: #fff;">Canal 2</p>
+                    </div>
+                    <div class="card-header">
+                        <h4 class="card-title"><strong>Crear un canal</strong></h4>
+                    </div>
+                    <div class="publisher bt-1 border-light"> <img class="avatar avatar-xs" src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="...">
+                        <input type="text" placeholder="Nombre del canal" class="publisher-input">
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="page-content page-container" id="page-content">
-            <div class="padding">
-                <div class="row container d-flex justify-content-center">
-                    <div class="col-md-4">
-                        <div class="card card-bordered">
-                            <div class="card-header">
-                                <h4 class="card-title"><strong>Canales</strong></h4>
+            <div class="col-md-8">
+                <div class="card card-bordered">
+                    <div class="card-header">
+                        <h4 class="card-title"><strong>Chat</strong></h4>
+                    </div>
+                    <div class="ps-container ps-theme-default ps-active-y" id="chat-content"
+                        style="overflow-y: scroll !important; height:400px !important;">
+                        <div class="media media-chat"> <img class="avatar"
+                                src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="...">
+                            <div class="media-body">
+                                <p>Hi</p>
+                                <p>...</p>
+                                <p>...<br> Lorem Ipsum</p>
+                                <p class="meta"><time datetime="2018">23:58</time></p>
                             </div>
-                            <div>
-                                <p style="padding: 10px; background-color: rgba(0,0,0,.6); color: #fff;">Canal 1</p>
-                                <p style="padding: 10px; background-color: rgba(0,0,0,.6); color: #fff;">Canal 2</p>
-                                <p style="padding: 10px; background-color: rgba(0,0,0,.6); color: #fff;">Canal 3</p>
+                        </div>
+                        <div class="media media-chat media-chat-reverse">
+                            <div class="media-body" id="texto-mensaje">
                             </div>
-                            <div class="card-header">
-                                <h4 class="card-title"><strong>Crear un canal</strong></h4>
-                            </div>
-                            <div class="publisher bt-1 border-light"> <img class="avatar avatar-xs"
-                                    src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="..."> <input class="publisher-input"
-                                    type="text" placeholder="Nombre del canal"> </div>
+                        </div>
+                        <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;">
+                            <div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+                        </div>
+                        <div class="ps-scrollbar-y-rail" style="top: 0px; height: 0px; right: 2px;">
+                            <div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 2px;"></div>
                         </div>
                     </div>
-
-                    <div class="col-md-8">
-                        <div class="card card-bordered">
-                            <div class="card-header">
-                                <h4 class="card-title"><strong>Chat</strong></h4>
-                            </div>
-                            <div class="ps-container ps-theme-default ps-active-y" id="chat-content"
-                                style="overflow-y: scroll !important; height:400px !important;">
-                                <div class="media media-chat"> <img class="avatar"
-                                        src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="...">
-                                    <div class="media-body">
-                                        <p>Hi</p>
-                                        <p>...</p>
-                                        <p>...<br> Lorem Ipsum</p>
-                                        <p class="meta"><time datetime="2018">23:58</time></p>
-                                    </div>
-                                </div>
-                                <div class="media media-chat media-chat-reverse">
-                                    <div class="media-body">
-                                        <p>Mi mensaje de bienvenida!</p>
-                                        <p class="meta"><time datetime="2018">00:12</time></p>
-                                    </div>
-                                </div>
-                                <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;">
-                                    <div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
-                                </div>
-                                <div class="ps-scrollbar-y-rail" style="top: 0px; height: 0px; right: 2px;">
-                                    <div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 2px;"></div>
-                                </div>
-                            </div>
-                            <div class="publisher bt-1 border-light"> <img class="avatar avatar-xs"
-                                    src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="..."> <input
-                                    class="publisher-input" type="text" placeholder="Envíe su mensaje"> </div>
-                        </div>
+                    <div class="publisher bt-1 border-light"> <img class="avatar avatar-xs" src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="..."> 
+                        <input class="publisher-input" id="content-msg" type="text" placeholder="Envíe su mensaje">
+                        <input type="button" id="Enviar" value="Enviar mensaje" />
                     </div>
                 </div>
             </div>
+                
         </div>
 
 
         <div class="mt-5"></div>
 
         {% block main %} {% endblock %}
-
-        <div class="row">
-            {% for dict_item in Dict_Phrases %} {% for key, value in dict_item.items() %}
-            <div class="col-md-6 mx-auto mt-3">
-                <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
-                    <div class="blockquote-custom-icon bg-info shadow-sm"><i class="fa fa-book text-white"></i>
-                    </div>
-                    <p class="mb-0 mt-2 font-italic">"{{key}}"</p>
-                    <footer class="blockquote-footer pt-4 mt-4 border-top">Someone famous in
-                        <cite title="Source Title">{{value}}</cite>
-                    </footer>
-                </blockquote>
-            </div>
-            {% endfor %} {% endfor %}
-        </div>
-
 
         <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -167,23 +133,15 @@
                         </div>
         
                         <div class="modal-body">
-                            <p class="text-muted">¡Haz un poco de memoria! 😉</p>
+                            <p class="text-muted">¡Esta es tu oportunidad de ponerte el nombre que siempre quisiste! 😉</p>
         
-                            <label for="login_username">Nombre de usuario</label>
+                            <label for="login_username">Mi nickname será: </label>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
                                 </div>
                                 <input type="text" class="form-control" placeholder="Nombre de usuario" id="login_username"
                                     aria-label="login_username" aria-describedby="login_username">
-                            </div>
-                            <label for="login_password">Contraseña</label>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fa fa-key" aria-hidden="true"></i></span>
-                                </div>
-                                <input type="password" class="form-control" placeholder="Contraseña" id="login_password"
-                                    aria-label="login_password" aria-describedby="login_password">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -194,101 +152,6 @@
             </div>
         </div>
         
-        <!-- Modal Signin -->
-        <div class="modal fade" id="signin" tabindex="-1" role="dialog" aria-labelledby="signinLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <form id="FormAdminSignin">
-                        <div class="modal-header">
-                            <div class="container d-flex pl-0"><img
-                                    src="{{ url_for('static', filename='images/logo/favicon.png') }}">
-                                <h5 class="modal-title ml-2" id="signinLabel">Regístrate</h5>
-                            </div> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span
-                                    aria-hidden="true">&times;</span> </button>
-                        </div>
-                        <div class="modal-body">
-                            <p class="text-muted">¡Estupendo! En cuanto acabe el registro, puede iniciar sesión para disfrutar
-                                de sus libros favoritos 🤓</p>
-        
-                            <label for="signin_nickname">Apodo</label>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fa fa-check" aria-hidden="true"></i></span>
-                                </div>
-                                <input type="text" class="form-control" placeholder="¿Cómo quieres que te llamen tus fans?"
-                                    id="signin_nickname" aria-label="signin_nickname" aria-describedby="signin_nickname"
-                                    required />
-                            </div>
-        
-                            <div class="row">
-                                <div class="col-md-6 col-12">
-                                    <label for="signin_username">Nombre de usuario</label>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
-                                        </div>
-                                        <input type="text" class="form-control" placeholder="Nombre de usuario"
-                                            id="signin_username" aria-label="signin_username" aria-describedby="signin_username"
-                                            required />
-                                    </div>
-                                </div>
-        
-                                <div class="col-md-6 col-12">
-                                    <label for="signin_password">Contraseña</label>
-                                    <label class="label-ShowFieldsKeys"
-                                        onclick="javascript: ShowFieldsKeys()">Recomendar</label>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fa fa-key" aria-hidden="true"></i></span>
-                                        </div>
-                                        <input type="password" class="form-control" placeholder="Contraseña"
-                                            id="signin_password" aria-label="signin_password" aria-describedby="signin_password"
-                                            required />
-                                    </div>
-                                </div>
-                            </div>
-        
-                            <label for="signin_email">Email</label>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                                </div>
-                                <input type="email" class="form-control" placeholder="Dirección de correo" id="signin_email"
-                                    aria-label="signin_email" aria-describedby="signin_email" required />
-                            </div>
-        
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" id="signin_submit" class="btn btn-dark text-light">Registrar ahora</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        
-        <input type="hidden" id="btnModalValidationFormLogin" class="btn mr-2 mb-2 btn-primary" data-toggle="modal"
-            data-target="#modalValidationFormLogin" />
-        
-        <div class="modal fade show" id="modalValidationFormLogin" tabindex="-1" role="dialog"
-            aria-labelledby="modalValidationFormLoginLabel" aria-modal="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalValidationFormLoginLabel">Verificación de credenciales</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p class="mb-0" id="messageModalValidationFormLogin">...</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">De acuerdo</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </main>
 
     <footer>
@@ -309,37 +172,7 @@
                     <div class="col-12">
                         <img src="{{ url_for('static', filename='images/logo/w-logo.png') }}" class="img-fluid" alt="Crashell">
                     </div>
-                    <!-- Desktop -->
-                    <div class="d-none d-sm-none d-md-block" style="width: 100%;">
-                        <div class="col-12 mt-4">
-                            <ul class="cs-footer-nav">
-                                <li class="px-2">
-                                    <a href="./" class="cs-link"> <i class="cs-icon fa fa-home"></i> Iniciar sesión</a>
-                                </li>
-                                <li class="px-2">
-                                    <a href="./" class="cs-link"> <i class="cs-icon fa fa-home"></i> Regístrate</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
 
-                    <!-- Mobile -->
-                    <div class="d-block d-sm-block d-md-none" style="width: 100%;">
-                        <ul class="cs-footer-nav">
-                            <div class="row">
-                                <div class="col-12">
-                                    <li class="mt-3 p-2 bg-cs-dark rounded">
-                                        <a href="" data-toggle="modal" data-target="#login" class="cs-link"> <i class="cs-icon fa fa-home"></i> Iniciar sesión</a>
-                                    </li>
-                                </div>
-                                <div class="col-12">
-                                    <li class="mt-3 p-2 bg-cs-dark rounded">
-                                        <a href="" data-toggle="modal" data-target="#signin" class="cs-link"> <i class="cs-icon fas fa-briefcase"></i> Regístrate</a>
-                                    </li>
-                                </div>
-                            </div>
-                        </ul>
-                    </div>
 
                     <div class="col-12 mt-4">
                         <ul class="cs-social-list">
@@ -376,6 +209,7 @@
 
     <script src="{{ url_for('static', filename='libs/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ url_for('static', filename='libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
     <script src="{{ url_for('static', filename='libs/toastr/js/toastr.js') }}"></script>
     <script src="{{ url_for('static', filename='libs/custom/js/global.js') }}"></script>
 </body>

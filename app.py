@@ -2,20 +2,29 @@ import os
 import json
 from flask import Flask, render_template, request, session, redirect
 from flask_session import Session
+from flask_socketio import SocketIO, emit, send
 
 app = Flask(__name__)
+# Configure session to use filesystem
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
+app.config['TEMPLATES_AUTO_RELOAD'] = True
+app.config['SECRET_KEY'] = 'secret'
+Session(app)
 
-Dict_Phrases = [
-    {'Seas quien seas, hagas lo que hagas, cuando deseas con firmeza alguna cosa es porque este deseo nació en el alma del universo.':'El Alquimista (Paulo Coelho)'},
-    {'No todo lo que es de oro reluce, ni toda la gente errante anda perdida':'El Señor de los Anillos (J.R.R. Tolkien)'}
-]
+socketio = SocketIO(app)
 
+# Cargamos la plantilla HTML con el frontend.
 @app.route('/')
 def index():
-    return render_template("index.html", len = len(Dict_Phrases), Dict_Phrases = Dict_Phrases)
+    return render_template('index.html')
 
-# @app.route("/create_group", methods=['POST'])
-# def create_group():
+# Recibirá los nuevos mensajes y los emitirá por socket.
+@socketio.on('message') # recibir msj del lado del cliente al servidor (EVENTO) . 
+def handle_Message(msg): # Comenzamos a manejar el msj.
+    print('Mensaje: ' + msg) #mensaje en terminal.
+    send(msg, broadcast = True) #mensaje al lado del cliente con su transmision.
 
+# Iniciamos
 if __name__ == '__main__':
-    app.run(debug=True)
+    socketio.run(app)
