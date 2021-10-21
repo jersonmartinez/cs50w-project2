@@ -40,15 +40,15 @@
                 <form class="form-inline my-2 my-lg-0">
                     <li class="nav-item active">
                         <a class="nav-link text-light" href="" data-toggle="modal" data-target="#login">
-                            <i class="fa fa-home"></i> Iniciar sesión
+                            <i class="fa fa-home"></i> Iniciar sesión como
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link text-light" href="" data-toggle="modal" data-target="#signin">
                             <i class="fas fa-briefcase"></i> Regístrate
                         </a>
-                    </li>
+                    </li> -->
                 </form>
             </div>
         </div>
@@ -70,7 +70,68 @@
                 </div>
             </div>
         </div>
-        
+
+        <div class="page-content page-container" id="page-content">
+            <div class="padding">
+                <div class="row container d-flex justify-content-center">
+                    <div class="col-md-4">
+                        <div class="card card-bordered">
+                            <div class="card-header">
+                                <h4 class="card-title"><strong>Canales</strong></h4>
+                            </div>
+                            <div>
+                                <p style="padding: 10px; background-color: rgba(0,0,0,.6); color: #fff;">Canal 1</p>
+                                <p style="padding: 10px; background-color: rgba(0,0,0,.6); color: #fff;">Canal 2</p>
+                                <p style="padding: 10px; background-color: rgba(0,0,0,.6); color: #fff;">Canal 3</p>
+                            </div>
+                            <div class="card-header">
+                                <h4 class="card-title"><strong>Crear un canal</strong></h4>
+                            </div>
+                            <div class="publisher bt-1 border-light"> <img class="avatar avatar-xs"
+                                    src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="..."> <input class="publisher-input"
+                                    type="text" placeholder="Nombre del canal"> </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="card card-bordered">
+                            <div class="card-header">
+                                <h4 class="card-title"><strong>Chat</strong></h4>
+                            </div>
+                            <div class="ps-container ps-theme-default ps-active-y" id="chat-content"
+                                style="overflow-y: scroll !important; height:400px !important;">
+                                <div class="media media-chat"> <img class="avatar"
+                                        src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="...">
+                                    <div class="media-body">
+                                        <p>Hi</p>
+                                        <p>...</p>
+                                        <p>...<br> Lorem Ipsum</p>
+                                        <p class="meta"><time datetime="2018">23:58</time></p>
+                                    </div>
+                                </div>
+                                <div class="media media-chat media-chat-reverse">
+                                    <div class="media-body">
+                                        <p>Mi mensaje de bienvenida!</p>
+                                        <p class="meta"><time datetime="2018">00:12</time></p>
+                                    </div>
+                                </div>
+                                <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;">
+                                    <div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+                                </div>
+                                <div class="ps-scrollbar-y-rail" style="top: 0px; height: 0px; right: 2px;">
+                                    <div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 2px;"></div>
+                                </div>
+                            </div>
+                            <div class="publisher bt-1 border-light"> <img class="avatar avatar-xs"
+                                    src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="..."> <input
+                                    class="publisher-input" type="text" placeholder="Envíe su mensaje"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <div class="mt-5"></div>
 
         {% block main %} {% endblock %}

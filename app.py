@@ -14,8 +14,8 @@ Dict_Phrases = [
 def index():
     return render_template("index.html", len = len(Dict_Phrases), Dict_Phrases = Dict_Phrases)
 
-@app.route("/create_group", methods=['POST'])
-def create_group():
+# @app.route("/create_group", methods=['POST'])
+# def create_group():
 
 if __name__ == '__main__':
     app.run(debug=True)
