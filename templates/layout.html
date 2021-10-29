@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Crashell {% block title %}{% endblock %}</title>
+    <title>Crashell Chat</title>
 
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo/favicon.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ url_for('static', filename='libs/bootstrap/css/bootstrap.min.css') }}">
@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='libs/toastr/css/toastr.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='libs/custom/css/scroll-to-top.css') }}">
     <script src="{{ url_for('static', filename='libs/jquery/jquery-3.6.0.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 </head>
 
 <body>
-
     <nav class="navbar navbar-horizontal navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <div class="d-block d-sm-block d-md-none">
@@ -25,9 +25,10 @@
                     <img src="{{ url_for('static', filename='images/logo/w-logo.png') }}" class="img-fluid" alt="Crashell">
                 </a>
             </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                 <div class="d-none d-sm-none d-md-block">
                     <a class="navbar-brand" href="#">
@@ -35,134 +36,62 @@
                     </a>
                 </div>
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    
+    
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link text-light" href="" data-toggle="modal" data-target="#login">
-                            <i class="fa fa-home"></i> Iniciar sesión como
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link text-light" href="" data-toggle="modal" data-target="#signin">
-                            <i class="fas fa-briefcase"></i> Regístrate
-                        </a>
-                    </li> -->
-                </form>
+                <a class="nav-link text-light" href="" data-toggle="modal" data-target="#login">
+                    <i class="fas fa-user"></i> Iniciar sesión
+                    <span class="sr-only">(current)</span>
+                </a>
             </div>
         </div>
     </nav>
+    
     <div class="container my-4 py-4"></div>
-    <div class="container my-1 py-1"></div>
 
-    <main class="container" role="main">
-
-        <div class="row justify-content-center">
-            <div class="col-md-4">
-                <div class="card card-bordered">
-                    <div class="card-header">
-                        <h4 class="card-title"><strong>Canales</strong></h4>
+    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="/login" method="POST">
+                    <div class="modal-header">
+                        <div class="container d-flex pl-0"><img
+                                src="{{ url_for('static', filename='images/logo/favicon.png') }}">
+                            <h5 class="modal-title ml-2" id="signinLabel">Inicia sesión</h5>
+                        </div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                    <div>
-                        <p style="padding: 10px; background-color: rgba(0,0,0,.6); color: #fff;">Canal 1</p>
-                        <p style="padding: 10px; background-color: rgba(0,0,0,.6); color: #fff;">Canal 2</p>
-                    </div>
-                    <div class="card-header">
-                        <h4 class="card-title"><strong>Crear un canal</strong></h4>
-                    </div>
-                    <div class="publisher bt-1 border-light"> <img class="avatar avatar-xs" src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="...">
-                        <input type="text" placeholder="Nombre del canal" class="publisher-input">
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-8">
-                <div class="card card-bordered">
-                    <div class="card-header">
-                        <h4 class="card-title"><strong>Chat</strong></h4>
-                    </div>
-                    <div class="ps-container ps-theme-default ps-active-y" id="chat-content"
-                        style="overflow-y: scroll !important; height:400px !important;">
-                        <div class="media media-chat"> <img class="avatar"
-                                src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="...">
-                            <div class="media-body">
-                                <p>Hi</p>
-                                <p>...</p>
-                                <p>...<br> Lorem Ipsum</p>
-                                <p class="meta"><time datetime="2018">23:58</time></p>
+    
+                    <div class="modal-body">
+                        <p class="text-muted">¡Esta es tu oportunidad de ponerte el nombre que siempre quisiste! 😉
+                        </p>
+    
+                        <label for="login_username">Mi nickname será: </label>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
                             </div>
-                        </div>
-                        <div class="media media-chat media-chat-reverse">
-                            <div class="media-body" id="texto-mensaje">
-                            </div>
-                        </div>
-                        <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;">
-                            <div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
-                        </div>
-                        <div class="ps-scrollbar-y-rail" style="top: 0px; height: 0px; right: 2px;">
-                            <div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 2px;"></div>
+                            <input type="text" class="form-control" placeholder="Nombre de usuario" id="login_username" name="login_username"
+                                aria-label="login_username" aria-describedby="login_username">
                         </div>
                     </div>
-                    <div class="publisher bt-1 border-light"> <img class="avatar avatar-xs" src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="..."> 
-                        <input class="publisher-input" id="content-msg" type="text" placeholder="Envíe su mensaje">
-                        <input type="button" id="Enviar" value="Enviar mensaje" />
+                    <div class="modal-footer">
+                        <button type="submit" id="login_submit" class="btn btn-dark text-light">Iniciar sesión</button>
                     </div>
-                </div>
-            </div>
-                
-        </div>
-
-
-        <div class="mt-5"></div>
-
-        {% block main %} {% endblock %}
-
-        <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <form id="FormAdminLogin">
-                        <div class="modal-header">
-                            <div class="container d-flex pl-0"><img
-                                    src="{{ url_for('static', filename='images/logo/favicon.png') }}">
-                                <h5 class="modal-title ml-2" id="signinLabel">Inicia sesión</h5>
-                            </div>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-        
-                        <div class="modal-body">
-                            <p class="text-muted">¡Esta es tu oportunidad de ponerte el nombre que siempre quisiste! 😉</p>
-        
-                            <label for="login_username">Mi nickname será: </label>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
-                                </div>
-                                <input type="text" class="form-control" placeholder="Nombre de usuario" id="login_username"
-                                    aria-label="login_username" aria-describedby="login_username">
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" id="login_submit" class="btn btn-dark text-light">Iniciar sesión</button>
-                        </div>
-                    </form>
-                </div>
+                </form>
             </div>
         </div>
-        
-    </main>
+    </div>
 
     <footer>
-
         <div class="bt">
             <div class="elementor-shape divider flip-x injected-svg bg-divider-darker" data-negative="false">
-                <svg class="bg-divider-darker" xmlns="http://www.w3.org/2000/svg" viewBox="0 2 1000 100" preserveAspectRatio="none">
-                        <path class="elementor-shape-fill" style="box-sizing: unset !important;"
-                            d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7 c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4 c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z">
-                        </path>
-                    </svg>
+                <svg class="bg-divider-darker" xmlns="http://www.w3.org/2000/svg" viewBox="0 2 1000 100"
+                    preserveAspectRatio="none">
+                    <path class="elementor-shape-fill" style="box-sizing: unset !important;"
+                        d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7 c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4 c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z">
+                    </path>
+                </svg>
             </div>
         </div>
 
@@ -170,24 +99,31 @@
             <div class="container py-1">
                 <div class="row cs-footer text-center py-lg-10 pt-3 pb-5">
                     <div class="col-12">
-                        <img src="{{ url_for('static', filename='images/logo/w-logo.png') }}" class="img-fluid" alt="Crashell">
+                        <img src="{{ url_for('static', filename='images/logo/w-logo.png') }}" class="img-fluid"
+                            alt="Crashell">
                     </div>
-
 
                     <div class="col-12 mt-4">
                         <ul class="cs-social-list">
                             <li>
-                                <a class="icon icon-sm icon-circle icon-circle-md icon-cs-light fab fa-github" target="_blank" rel="noopener noreferrer" href="https://github.com/jersonmartinez/">
+                                <a class="icon icon-sm icon-circle icon-circle-md icon-cs-light fab fa-github"
+                                    target="_blank" rel="noopener noreferrer" href="https://github.com/jersonmartinez/">
                                 </a>
                             </li>
                             <li>
-                                <a class="icon icon-sm icon-circle icon-circle-md icon-cs-light fab fa-twitter" target="_blank" rel="noopener noreferrer" href="https://twitter.com/antoniomorenosm"></a>
+                                <a class="icon icon-sm icon-circle icon-circle-md icon-cs-light fab fa-twitter"
+                                    target="_blank" rel="noopener noreferrer"
+                                    href="https://twitter.com/antoniomorenosm"></a>
                             </li>
                             <li>
-                                <a class="icon icon-sm icon-circle icon-circle-md icon-cs-light fab fa-linkedin-in" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/jersonmartinezsm/"></a>
+                                <a class="icon icon-sm icon-circle icon-circle-md icon-cs-light fab fa-linkedin-in"
+                                    target="_blank" rel="noopener noreferrer"
+                                    href="https://www.linkedin.com/in/jersonmartinezsm/"></a>
                             </li>
                             <li>
-                                <a class="icon icon-sm icon-circle icon-circle-md icon-cs-light fab fa-youtube" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/gvideosmtutorialesgm"></a>
+                                <a class="icon icon-sm icon-circle icon-circle-md icon-cs-light fab fa-youtube"
+                                    target="_blank" rel="noopener noreferrer"
+                                    href="https://www.youtube.com/gvideosmtutorialesgm"></a>
                             </li>
                         </ul>
                     </div>
@@ -209,9 +145,9 @@
 
     <script src="{{ url_for('static', filename='libs/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ url_for('static', filename='libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
     <script src="{{ url_for('static', filename='libs/toastr/js/toastr.js') }}"></script>
     <script src="{{ url_for('static', filename='libs/custom/js/global.js') }}"></script>
+
 </body>
 
 </html>

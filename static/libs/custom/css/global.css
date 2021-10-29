@@ -457,7 +457,6 @@ ul.cs-social-list a:hover {
 
 .card {
     border: 0;
-    border-radius: 0px;
     margin-bottom: 30px;
     -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.03);
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.03);
@@ -483,7 +482,9 @@ ul.cs-social-list a:hover {
     align-items: center;
     padding: 15px 20px;
     background-color: transparent;
-    border-bottom: 1px solid rgba(77, 82, 89, 0.07)
+    border-bottom: 1px solid rgba(77, 82, 89, 0.07);
+    background: rgba(0,0,0,.8);
+    color: #fff;
 }
 
 .card-header .card-title {
@@ -596,7 +597,8 @@ h4.card-title {
 .media-chat .media-body p.meta {
     background-color: transparent !important;
     padding: 0;
-    opacity: .8
+    opacity: .8;
+    margin-bottom: 25px;
 }
 
 .media-meta-day {
@@ -661,8 +663,14 @@ h4.card-title {
 .media-chat.media-chat-reverse .media-body p {
     float: right;
     clear: right;
-    background-color: #48b0f7;
+    background-color: rgba(0,0,0,0.3);
     color: #fff
+}
+
+.media-chat.media-chat-reverse .media-body p.username {
+    background-color: rgba(0,0,0,0.4);
+    color: rgb(13, 199, 152);
+    border-radius: 0 50px 50px 0;
 }
 
 .media-chat .media-body p {
@@ -688,7 +696,7 @@ h4.card-title {
     -webkit-box-align: center;
     align-items: center;
     padding: 12px 20px;
-    background-color: #f9fafb
+    background: rgba(0,0,0,.78);
 }
 
 .publisher>*:first-child {
@@ -704,7 +712,8 @@ h4.card-title {
     flex-grow: 1;
     border: none;
     outline: none !important;
-    background-color: transparent
+    background-color: transparent;
+    color: #fff;
 }
 
 .publisher-btn {
@@ -715,7 +724,7 @@ h4.card-title {
     cursor: pointer;
     overflow: -moz-hidden-unscrollable;
     -webkit-transition: .2s linear;
-    transition: .2s linear
+    transition: .2s linear;
 }
 
 .file-group {
@@ -731,16 +740,59 @@ h4.card-title {
     cursor: pointer;
     overflow: -moz-hidden-unscrollable;
     -webkit-transition: .2s linear;
-    transition: .2s linear
+    transition: .2s linear;
 }
 
 .file-group input[type="file"] {
     position: absolute;
     opacity: 0;
     z-index: -1;
-    width: 20px
+    width: 20px;
 }
 
 .text-info {
-    color: #48b0f7 !important
+    color: #48b0f7 !important;
 } 
+
+.channel_item {
+    width: 100%;
+    padding: 10px;
+    padding-left: 30px; 
+    background-color: rgba(0,0,0,.6); 
+    color: #fff;
+    list-style: none;
+    cursor:pointer;
+}
+
+.channel_item:hover {
+    background-color: rgba(0,0,0,.7); 
+}
+
+.channel_item:active {
+    background-color: rgba(0,0,0,.8); 
+}
+
+.channel_item a {
+    color: #fff;
+    text-decoration: none;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li.active {
+    background-color: rgba(0,0,0,.8);
+}
+
+ul li.active a {
+    font-weight: bold;
+}
+
+.ps-container {
+    background: rgba(0,0,0,.7);
+    color: #fff;
+}

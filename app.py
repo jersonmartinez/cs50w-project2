@@ -14,16 +14,44 @@ Session(app)
 
 socketio = SocketIO(app)
 
+channels = dict()
+
 # Cargamos la plantilla HTML con el frontend.
 @app.route('/')
 def index():
-    return render_template('index.html')
+    if 'username' in session:
+        return render_template('dashboard.html')
+    else:
+        return render_template('layout.html', username=session['username'])
 
-# Recibirá los nuevos mensajes y los emitirá por socket.
-@socketio.on('message') # recibir msj del lado del cliente al servidor (EVENTO) . 
-def handle_Message(msg): # Comenzamos a manejar el msj.
-    print('Mensaje: ' + msg) #mensaje en terminal.
-    send(msg, broadcast = True) #mensaje al lado del cliente con su transmision.
+@app.route("/login", methods=['POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form.get('login_username')
+        session['username'] = username
+        print(f"Username: {username}")
+        return redirect("/")
+
+@socketio.on('connect')
+def connect():
+    print('Client connected')
+
+@socketio.on('getchannel')
+def getChannel(msg): 
+    print('Canal: ' + msg)
+    emit('getchannel', msg, broadcast = True)
+
+@socketio.on('message')
+def handle_Message(msg):
+    data = dict(username=session['username'], message=msg['message'], channel=msg['channel'], time_hour_minute=msg['time_hour_minute'])
+    print('Message: ' + data['channel'])
+    send(data, broadcast = True)
+
+
+@app.route("/logout")
+def logout():
+    session.clear()
+    return render_template('layout.html')
 
 # Iniciamos
 if __name__ == '__main__':
