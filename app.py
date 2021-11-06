@@ -1,8 +1,8 @@
 import os
 import json
-from flask import Flask, render_template, request, session, redirect
+from flask import Flask, render_template, request, session, redirect, url_for
 from flask_session import Session
-from flask_socketio import SocketIO, emit, send
+from flask_socketio import SocketIO, emit, send, join_room, leave_room
 
 app = Flask(__name__)
 # Configure session to use filesystem
@@ -15,11 +15,11 @@ Session(app)
 socketio = SocketIO(app)
 
 channels = dict()
+users = {}
 
-# Cargamos la plantilla HTML con el frontend.
 @app.route('/')
 def index():
-    if 'username' in session:
+    if session['username']:
         return render_template('dashboard.html')
     else:
         return render_template('layout.html', username=session['username'])
@@ -39,7 +39,11 @@ def connect():
 @socketio.on('getchannel')
 def getChannel(msg): 
     print('Canal: ' + msg)
+    room = session.get(msg)
+    join_room(room)
     emit('getchannel', msg, broadcast = True)
+    emit('status', {'msg': session.get('username') + ' has entered the room.'}, room=room)
+
 
 @socketio.on('message')
 def handle_Message(msg):
@@ -47,6 +51,14 @@ def handle_Message(msg):
     print('Message: ' + data['channel'])
     send(data, broadcast = True)
 
+@socketio.on('username')
+def receive_username(username):
+    users[username] = request.sid
+    #users.append({username : request.sid})
+    #print(users)
+    emit('userList', users, broadcast=True)
+    print('Username added!')
+    print(users)
 
 @app.route("/logout")
 def logout():
